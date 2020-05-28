@@ -28,17 +28,17 @@ public class FilesStorageServiceImpl implements FilesStorageService {
 			//Set<PosixFilePermission> permissions = PosixFilePermissions.fromString("rwxr--r--");
             //FileAttribute<Set<PosixFilePermission>> fileAttributes = PosixFilePermissions.asFileAttribute(permissions);
 			//using PosixFilePermission to set file permissions 777
-	        Set<PosixFilePermission> perms = new HashSet<PosixFilePermission>();
-	        //add owners permission
-	        perms.add(PosixFilePermission.OWNER_READ);
-	        perms.add(PosixFilePermission.OWNER_WRITE);
-	        perms.add(PosixFilePermission.OWNER_EXECUTE);
-	        //add group permissions
-	        perms.add(PosixFilePermission.GROUP_READ);
-	        //add others permissions
-	        perms.add(PosixFilePermission.OTHERS_READ);
-	        FileAttribute<Set<PosixFilePermission>> fileAttributes = PosixFilePermissions.asFileAttribute(perms);
-			Files.createDirectory(root,fileAttributes);
+//	        Set<PosixFilePermission> perms = new HashSet<PosixFilePermission>();
+//	        //add owners permission
+//	        perms.add(PosixFilePermission.OWNER_READ);
+//	        perms.add(PosixFilePermission.OWNER_WRITE);
+//	        perms.add(PosixFilePermission.OWNER_EXECUTE);
+//	        //add group permissions
+//	        perms.add(PosixFilePermission.GROUP_READ);
+//	        //add others permissions
+//	        perms.add(PosixFilePermission.OTHERS_READ);
+//	        FileAttribute<Set<PosixFilePermission>> fileAttributes = PosixFilePermissions.asFileAttribute(perms);
+			Files.createDirectory(root);
 		} catch (IOException e) {
 			throw new RuntimeException("Could not initialize folder for upload!");
 		}
